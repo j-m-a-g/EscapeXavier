@@ -1,0 +1,87 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Library | Escape Xavier</title>
+  <link rel="stylesheet" href="../roomStyle.css">
+  <link rel="stylesheet" href="library.css">
+  
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body id="libraryBody"
+  onload="getCurrentTime('libraryTimer');
+          increaseTime('libraryTimer');
+          showPlayerName()">
+
+  <!-- Ambiance to be played in all puzzle rooms -->
+  <audio loop autoplay>
+    <source src="../../audio/clockTickingWithEcho.ogg" type="audio/ogg">
+  </audio>
+  
+  <!-- Top bar to appear in all rooms -->
+  <header>
+    <span class="escapeTimerHeading">
+      It's <span id="libraryTimer" class="escapeTimer">6: 00</span>pm <span id="userNameDisplay"></span>
+    </span>
+    <nav class="quickTopNavigation">
+      <button id="libraryHints" class="quickTopNavigation" onclick="generateHint('libraryHints', 'Utilize your cursor...', 'Some things are best <i>left<i> as memories', 'Book')">
+        💡 Hint
+      </button>
+      <button class="quickTopNavigation" onmouseover="warnUserOfExit()" onclick="leaveCurrentRoom('libraryTimer')">
+        🚪 Leave Library
+      </button>
+      <button class="quickTopNavigation" onclick="showInstructions()">
+        🥽 Put VR Headset On
+      </button>
+    </nav>
+  </header>
+
+  <!-- Book Image Button to Trigger the Quiz -->
+  <button id="book" class="imageButtons" onclick="startQuiz()">
+    <img class="interactableImage dimmedImage" src="../../images/libraryPuzzle/book.jpg" alt="Library Book">
+  </button>
+
+  <!-- Background for the Quiz -->
+  <div id="quizOverlay" class="quiz-overlay"></div>
+
+  <!-- Questions for Quiz (Hidden by default) -->
+  <div id="quizModal" class="quiz-modal">
+    <div class="modal-content">
+      <h2 id="question">True or False: A robot is always a physical machine with moving parts.</h2>
+      <input type="text" id="answerInput" placeholder="Type your answer...">
+      <button id="submitAnswer">Submit Answer</button>
+      <p id="feedback"></p>
+      <button id="leaveQuiz" onclick="leaveQuiz()">Leave Quiz</button>
+
+    </div>
+  </div>
+
+  <div id="instructions" class="instructions">
+    <h2>VR Maze Instructions</h2>
+    <p>Welcome to the VR Maze! Before continuing with the maze, take a look at the instructions:</p>
+    <ul>
+      <li>Navigate through the maze using the arrow keys.</li>
+      <li>Try to reach the exit. This will be indicated by three doors.</li>
+      <li>Click on the right door to recieve another digit</li>
+    </ul>
+    <p>Good luck!</p>
+    <p>NOTE: Devices with a gyroscope can freely look around and might have a better experience</p>
+    <!-- Button to proceed to the Maze -->
+    <button class="button" onclick="startMaze()">OK, I Understand</button>
+  </div>
+
+  <footer>
+    <p>
+      Background generated through the 
+      <a href="https://deepai.org/machine-learning-model/text2img">DeepAI AI Image Generator</a>
+    </p>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="library.js"></script>
+</body>
+
+</html>

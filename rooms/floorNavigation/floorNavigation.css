@@ -1,0 +1,35 @@
+/* 2025 - Navyaa & Joseph */
+
+.classroomSelection {
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
+  background-color: lightyellow;
+  opacity: 0.5;
+}
+.classroomSelection:hover {
+  background-color: yellow;
+  opacity: 0.5;
+}
+
+#floorNavigationBody {
+  background-position-x: right;
+  background-size: contain;
+  background-image: url("../../images/roomBackdrops/secondFloorPlan.jpg");
+}
+
+#floorSelection {
+  width: 35%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 10px;
+  background-size: cover;
+  background-repeat: none;
+  background-image: url("../../images/roomBackdrops/floorNavigationElevatorBackground.png");
+}
+
+#selectAFloorHeading {
+  color: white;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.25)
+}

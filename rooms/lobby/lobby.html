@@ -1,0 +1,88 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lobby | Escape Xavier</title>
+  <link rel="stylesheet" href="../roomStyle.css">
+  <link rel="stylesheet" href="lobby.css">
+  
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body id="lobbyBody"
+  onclick="document.getElementById('escapePasscode').style.display = 'flex'"
+  onload="getCurrentTime('lobbyTimer');
+          increaseTime('lobbyTimer');
+          showPlayerName();
+          displayFoundDigits()">
+
+  <audio loop autoplay>
+    <source src="../../audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+  </audio>
+  
+  <!-- Top bar to appear in all rooms -->
+  <header>
+    <span class="escapeTimerHeading">
+      It's <span id="lobbyTimer" class="escapeTimer"></span>pm <span id="userNameDisplay"></span>
+    </span>
+    <nav class="quickTopNavigation">
+      <button id="lobbyHints" class="quickTopNavigation"
+        onclick="generateHint('lobbyHints', 'Who was the subject in, \'Go_behind_the_scenes.jpg?\'', 'The Enigma Machine', 'Date')">
+        💡 Hint
+      </button>
+      <button class="quickTopNavigation"
+        onmouseover="warnUserOfExit()" onclick="leaveCurrentRoom('lobbyTimer')">
+        🚪 Leave Lobby
+      </button>
+      <label>🔢 Found Digits: </label>
+      <label id="foundDigitsDisplay"></label>
+    </nav>
+  </header>
+
+  <br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="escapePasscode" class="sideBySide">
+    <details>
+      <summary></summary>
+      <iframe style="height: 85%" src="https://base64.guru/converter/decode"></iframe>
+      <br><a href="https://base64.guru/converter/decode" style="color: black">Source</a>
+    </details>
+    <div style="margin-left: auto; margin-right: auto">
+      <h2 id="codeDisplay"></h2>
+      <table>
+        <tr>
+          <td><button onclick="appendPasscodeDisplay(1)">1</button></td>
+          <td><button onclick="appendPasscodeDisplay(2)">2</button></td>
+          <td><button onclick="appendPasscodeDisplay(3)">3</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="appendPasscodeDisplay(4)">4</button></td>
+          <td><button onclick="appendPasscodeDisplay(5)">5</button></td>
+          <td><button onclick="appendPasscodeDisplay(6)">6</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="appendPasscodeDisplay(7)">7</button></td>
+          <td><button onclick="appendPasscodeDisplay(8)">8</button></td>
+          <td><button onclick="appendPasscodeDisplay(9)">9</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="appendPasscodeDisplay(0)">0</button></td>
+          <td colspan="2"><button onclick="document.getElementById('codeDisplay').innerHTML = ''">Clear</button></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <br><br>
+  <footer>
+    <p>Background generated through the <a href="https://deepai.org/machine-learning-model/text2img">DeepAI AI Image Generator</a></p>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="lobby.js"></script>
+</body>
+
+</html>

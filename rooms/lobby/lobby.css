@@ -1,0 +1,52 @@
+/* 2025 - Navyaa & Joseph */
+
+#lobbyBody {
+  background-position-y: -300px;
+  background-image: url("../../images/roomBackdrops/lobbyBackground.jpeg");
+}
+  
+#escapePasscode {
+  text-align: center;
+  border-radius: 12px;
+  background-color: #ebdaca;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  display: none;
+  padding: 14px;
+  border: none;
+  box-shadow: 0 2px 4px rgb(0, 0, 0);
+}
+
+#escapePasscode input {
+  font-size: 20px;
+  padding: 19px;
+  width: 30px;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #452211;
+  background-color: #ffd59e;
+  color: brown;
+}
+
+#escapePasscode button {
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 19px;
+  background-color:#452211;
+  border-style: solid;
+  border-color: #452211;
+  color: white;
+  font-family: 'Arial Narrow';
+}
+
+#escapePasscode button:hover {
+  background-color:#ffd59e;
+  color: black;
+}
+
+#escapePasscode button:active {
+  background-color:#452211;
+  color: white;
+}
+  

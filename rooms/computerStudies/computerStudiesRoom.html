@@ -1,0 +1,272 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Computer Studies Room | Escape Xavier</title>
+  <link rel="stylesheet" href="../roomStyle.css">
+  <link rel="stylesheet" href="computerStudies.css">
+  
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body id="computerStudiesBody"
+  onload="getCurrentTime('computerStudiesTimer');
+          increaseTime('computerStudiesTimer');
+          showPlayerName()">
+
+  <!-- Ambiance to be played in all puzzle rooms -->
+  <audio loop autoplay>
+    <source src="../../audio/clockTickingWithEcho.ogg" type="audio/ogg">
+  </audio>
+
+  <!-- Top bar to appear in all rooms -->
+  <header>
+    <span class="escapeTimerHeading">
+      <!-- Time hardcoded within the first room after the landing page
+        to, "ease," the transition between the delay of when the
+        browser retrieves the session variable for this -->
+      It's <span id="computerStudiesTimer" class="escapeTimer">6:00</span>pm <span id="userNameDisplay"></span>
+    </span>
+    <nav class="quickTopNavigation">
+      <button id="computerStudiesHints" class="quickTopNavigation"
+        onclick="generateHint('computerStudiesHints', 'Look lower', 'List', 'Connect to the SSH')">
+        💡 Hint
+      </button>
+      <button class="quickTopNavigation"
+        onmouseover="warnUserOfExit()"
+        onclick="leaveCurrentRoom('computerStudiesTimer')">
+        🚪 Leave Computer Studies
+      </button>
+    </nav>
+  </header>
+
+  <div id="computerStudiesRoomInterior">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button hidden id="computerMonitor" class="imageButtons"
+      onclick="hideAndShow('computerStudiesRoomInterior', 'computerCTFPuzzle')">
+      <img class="interactableImage dimmedImage"
+        style="rotate: 2deg; width: 80px; height: 80px; margin-left: 165px;"
+        src="../../images/computerStudiesPuzzle/desktopMonitor.png">
+    </button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="imageButtons"
+      onclick="hideAndShow('computerStudiesRoomInterior', 'desktopRepairPuzzle')">
+      <img class="interactableImage dimmedImage"
+        style="width: 48px; height: 48px; margin-left: 190px;"
+        src="../../images/computerStudiesPuzzle/desktopComputerToRepair.png">
+    </button>
+  </div>
+
+  <div class="puzzleContainer" id="desktopRepairPuzzle" hidden>
+    <div id="repairPuzzleFirstPerspective">
+      <!-- Fan -->
+      <img id="desktopFan" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 20%; margin-left: 600px; margin-top: 25px;">
+      <!-- To be used as a, "component," for all the img
+          elements for repairing the desktop -->
+      <select id="fanComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('fanComponentSelection', 'desktopFan')"
+        style="margin-left: 625px; margin-top: -5px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <!-- Heatsink -->
+      <img id="desktopHeatsink" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 20%; margin-left: 495px; margin-top: 25px;">
+      <select id="heatsinkComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('heatsinkComponentSelection', 'desktopHeatsink')"
+        style="margin-left: 500px; margin-top: 145px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <!-- Hard Drive -->
+      <img id="desktopHardDrive" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 25%; margin-left: 350px; margin-top: 225px;">
+      <select id="hardDriveComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('hardDriveComponentSelection', 'desktopHardDrive')"
+        style="margin-left: 340px; margin-top: 190px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <!-- Power Supply -->
+      <img id="desktopPowerSupply" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 25%; margin-left: 200px; margin-top: 225px;">
+      <select id="powerSupplyComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('powerSupplyComponentSelection', 'desktopPowerSupply')"
+        style="margin-left: 200px; margin-top: 190px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <!-- Optical Drive -->
+      <img id="desktopOpticalDrive" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 30%; margin-left: 515px; margin-top: 185px;">
+      <select id="opticalDriveComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('opticalDriveComponentSelection', 'desktopOpticalDrive')"
+        style="margin-left: 515px; margin-top: 365px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <img id="desktopRepairOverhead" class="centeredElements desktopRepairImages"
+        src="../../images/computerStudiesPuzzle/desktopOverhead.jpg">
+    </div>
+
+    <div hidden id="repairPuzzleSecondPerspective">
+      <!-- CPU -->
+      <img id="desktopCPU" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 18%; margin-left: 195px; margin-top: 58px;">
+      <select id="CPUComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('CPUComponentSelection', 'desktopCPU')"
+        style="margin-left: 150px; margin-top: 20px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <!-- RAM -->
+      <img id="desktopRAM" class="elementsOver outlinedPlaceholder"
+        src="../../images/computerStudiesPuzzle/whatDesktopComponent.jpg"
+        style="height: 50%; margin-left: 287px; margin-top: 16px;">
+      <select id="RAMComponentSelection" class="elementsOver"
+        onchange="componentSelectionChange('RAMComponentSelection', 'desktopRAM')"
+        style="margin-left: 285px; margin-top: 310px;">
+        <option value="Components">Components</option>
+        <option value="CPU">Central Processing Unit (CPU)</option>
+        <option value="Fan">Fan</option>
+        <option value="Hard Drive">Hard Drive (HDD)</option>
+        <option value="Heatsink">Heatsink</option>
+        <option value="Optical Drive">Optical Drive</option>
+        <option value="Power Supply">Power Supply</option>
+        <option value="RAM">Random Access Memory (RAM)</option>
+      </select>
+
+      <img id="secondDesktopOverhead" class="centeredElements desktopRepairImages"
+        src="../../images/computerStudiesPuzzle/desktopSecondPerspective.jpg">
+    </div>
+
+    <br>
+    <div class="sideBySide">
+      <button class="centeredElements generalButton"
+        onclick="hideAndShow('desktopRepairPuzzle', 'computerStudiesRoomInterior')">
+        Close
+      </button>
+      <button class="centeredElements generalButton"
+        onclick="switchDesktopPerspective()">
+        🔃 Switch Perspective
+      </button>
+      <button disabled id="repairDesktopButton" class="centeredElements generalButton"
+        onclick="hideAndShow('desktopRepairPuzzle', 'computerStudiesRoomInterior');
+                 document.getElementById('computerMonitor').hidden = false;">
+        🔨 Repair
+      </button>
+    </div>
+
+  </div>
+
+  <div hidden class="puzzleContainer" id="computerCTFPuzzle">
+    <button class="generalButton"
+      onclick="hideAndShow('computerCTFPuzzle', 'computerStudiesRoomInterior')">
+      Close
+    </button>
+    <br>
+    <br>
+    <textarea id="terminalArea" readonly>
+Welcome to EXiT! (Escape Xavier Terminal)
+'_' represents where your text cursor is or was located.
+
+Tigers@xavier-tigers:~$ _</textarea>
+
+    <table>
+      <tr>
+        <td style="width: 91.84%">
+          <input id="sendToTerminalInput" type="text" placeholder="Send a command to the terminal">
+        </td>
+        <td>
+          <button class="generalButton" 
+            onclick="sendTextToTerminal()">
+            ➡️ Send
+          </button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <footer>
+    <p>
+      Background generated through the 
+      <a href="https://deepai.org/machine-learning-model/text2img">DeepAI AI Image Generator</a>
+    </p>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="computerStudiesRoom.js"></script>
+</body>
+
+</html>

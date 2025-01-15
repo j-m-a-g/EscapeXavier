@@ -1,0 +1,154 @@
+#libraryBody {
+  background-position-y: -300px;
+  background-image: url("../../images/roomBackdrops/libraryBackground.jpg");
+}
+
+/* Book image button */
+.imageButtons {
+  position: fixed;
+  top: 340px; 
+  left: 37px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.imageButtons img {
+  width: 50px;
+  height: 60px;
+  transition: 0.3s ease;
+}
+
+.imageButtons:hover img {
+  transform: scale(1.1);
+}
+
+/* The quiz modal */
+.quiz-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff94af;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal content styling */
+.modal-content {
+  text-align: center;
+}
+
+.modal-content input {
+  padding: 10px;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(255, 53, 120);
+  border-radius: 5px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #1d093b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: rgb(255, 53, 120);
+}
+
+.modal-content .correct {
+  color: green;
+  font-size: 17px;
+}
+
+.modal-content .incorrect {
+  color: red;
+}
+
+/* Background overlay behind the modal */
+.quiz-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.instructions {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 15px;
+  background-color: #04071f;
+  border: 1px solid rgb(255, 151, 151);
+  border-radius: 5px;
+  display: none; 
+  color: aliceblue;
+  font-family: 'Arial Narrow';
+}
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Arial Narrow';
+  color:#04071f;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: antiquewhite;
+  border-color: rgb(255, 151, 151);
+  border-radius: 5px;
+}
+
+li {
+  font-size: 17px;
+}
+
+p {
+  font-size: 17px;
+}
+
+h2 {
+  color:rgb(255, 53, 120)
+}
+
+#question {
+  font-family: 'Arial';
+}
+
+#messageE1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Arial Narrow';
+  color:#04071f;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: antiquewhite;
+  border-color: rgb(255, 151, 151);
+  border-radius: 5px;
+}
+
+#leaveQuiz {
+  padding: 7px;
+  font-size: 12px;
+}

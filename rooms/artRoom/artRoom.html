@@ -1,0 +1,105 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Art Room | Escape Xavier</title>
+  <link rel="stylesheet" href="../roomStyle.css">
+  <link rel="stylesheet" href="artRoom.css">
+  
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body id="artRoomBody" 
+  onload="getCurrentTime('artRoomTimer');
+          increaseTime('artRoomTimer');
+          showPlayerName()">
+          
+  <!-- Ambiance to be played in all puzzle rooms -->
+  <audio loop autoplay>
+    <source src="../../audio/clockTickingWithEcho.ogg" type="audio/ogg">
+  </audio>
+
+  <!-- Top bar to appear in all rooms -->
+  <header>
+    <span class="escapeTimerHeading">
+      It's <span id="artRoomTimer" class="escapeTimer"></span>pm <span id="userNameDisplay"></span>
+    </span>
+    <nav class="quickTopNavigation">
+      <button id="artRoomHints" class="quickTopNavigation"
+        onclick="generateHint('artRoomHints', 'Shelf', 'Image Generator', 'Name Matters')">
+        💡 Hint
+      </button>
+      <button class="quickTopNavigation"
+        onmouseover="warnUserOfExit()"
+        onclick="leaveCurrentRoom('artRoomTimer')">
+        🚪 Leave Art Room
+      </button>
+    </nav>
+  </header>
+
+  <br>
+  <div id="artRoomInterior">
+    <button class="imageButtons"
+      style="margin-left: 525px; margin-top: 10px"
+      onclick="hideAndShow('artRoomInterior', 'uploadPaintingPuzzle')">
+      <img class="interactableImage dimmedImage"
+        style="width: 14%;"
+        src="../../images/artRoomPuzzle/artCanvas.png">
+    </button>
+  </div>
+
+  <div hidden class="puzzleContainer" id="uploadPaintingPuzzle"
+    style="background-color: transparent">
+    <img class="elementsOver" src="../../images/artRoomPuzzle/artCanvas.png"
+      style="width: 37%; padding-left: 50%; padding-right: 50%">
+    <div id="artPuzzleFirstPart" class="elementsOver artRoomPuzzleContainers">
+      <label for="uploadApplePainting">
+        Hand in your painting of an <i style="font-family: 'Times New Roman';">apple</i><br>here
+      </label>
+      <br>
+      <br>
+      <input id="uploadApplePainting" name="uploadApplePainting" type="file" accept="image/jpg, image/jpeg"
+        onchange="checkCorrectPaintingName()">
+    </div>
+
+    <div hidden id="artPuzzleSecondPart" class="elementsOver artRoomPuzzleContainers">
+      <label>
+        Can you take a look at 
+        <a download="" href="../../images/artRoomPuzzle/Go_behind_the_scenes.jpg"
+          onmouseover="sessionStorage.setItem('artRoomDigit', 'T25l')">
+          my painting
+        </a>?
+      </label>
+    </div>
+
+    <button class="centeredElements generalButton elementsOver"
+      onclick="hideAndShow('uploadPaintingPuzzle', 'artRoomInterior')">
+      Close
+    </button>
+    <details class="elementsOver"
+      style="margin-top: 50px">
+      <summary></summary>
+      <iframe style="width: 500px; height: 350px"
+        src="https://deepai.org/machine-learning-model/text2img"></iframe>
+        <br>
+        <a href="https://deepai.org/machine-learning-model/text2img">Source</a>
+      </details>
+    
+    <iframe hidden class="elementsOver" src="https://www.rapidtables.com/web/tools/base64-decode.html"></iframe>
+
+  </div>
+
+  <footer>
+    <p>
+      Background generated through the 
+      <a href="https://deepai.org/machine-learning-model/text2img">DeepAI AI Image Generator</a>
+    </p>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="artRoom.js"></script>
+</body>
+
+</html>

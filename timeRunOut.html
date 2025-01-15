@@ -1,0 +1,30 @@
+<!-- 2025 Navyaa & Joseph -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>You Ran Out of Time!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body class="escapeResultPage">
+  <audio loop autoplay>
+    <source src="audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+  </audio>
+
+  <footer class="successfulEscapeFooter">
+    <h1 style="color: yellow">You ran out of time!</h1>
+    <h2>Since they're generous, the janitor'll give you another chance</h2>
+    <button class="priorToPuzzle horizontallyCentered"
+        style="margin-bottom: 20px;"
+        onclick="sessionStorage.setItem('shownTimeClock', '6: 00'); window.location.replace('index.html')">
+        Play Again
+    </button>
+  </footer>
+
+</body>
+
+</html>

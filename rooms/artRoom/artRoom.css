@@ -1,0 +1,19 @@
+/* 2025 - Navyaa & Joseph */
+
+.artRoomPuzzleContainers {
+  margin-left: 535px;
+  margin-top: 200px;
+}
+  
+#artRoomBody {
+  background-position-y: -300px;
+  background-image: url("../../images/roomBackdrops/artRoomBackground.jpeg");
+}
+
+#uploadPaintingPuzzle {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100%;
+  position: center;
+}

@@ -1,0 +1,133 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Escape Xavier | Virtual Escape Room</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body id="landingPage"
+  onload="sessionStorage.setItem('computerStudiesDigit', '(not found)');
+          sessionStorage.setItem('artRoomDigit', '(not found)');
+          sessionStorage.setItem('libraryDigit', '(not found)');
+          sessionStorage.setItem('VRRoomDigit', '(not found)')">
+  <!-- Assigns an initial value to the individual digit session variables
+    instead of falling back to, "null," when the player has
+    not yet completed a puzzle to retrive the ecrypted digit -->
+  
+  <audio loop autoplay>
+    <source src="audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+  </audio>
+
+  <div id="landingPageDiv">
+    <div id="gameTitle" class="landingContainer">
+      <h1 class="landingTitle">Escape Xavier</h1>
+      <hr>
+      <h1 class="landingSubtitle">An escape you could've never imagined</h1>
+      <h2 class="landingDescription">
+        How good are you at being attentive?
+        <br>
+        <br>
+        <span style="color: white">Are you up for the challenge?</span>
+      </h2>
+      <button class="horizontallyCentered priorToPuzzle"
+        onclick="hideAndShow('gameTitle', 'getPlayerName')">
+        Continue
+      </button>
+    </div>
+
+  </div>
+
+  <div id="getPlayerName" class="landingContainer" hidden>
+    <h1 class="landingTitle">Let's Get to Know You<br>a Little Better</h1>
+    <hr>
+    <h1 class="landingSubtitle">What's your name?</h1>
+    <br>
+    <input id="playerNameInput" type="text" class="horizontallyCentered" placeholder="Enter here">
+    <br>
+    <div class="sideBySide">
+      <button class="priorToPuzzle horizontallyCentered"
+        onclick="hideAndShow('getPlayerName', 'playerReady'); sessionStorage.setItem('usersName', 'Guest')">
+        Prefer Not To
+      </button>
+      <button class="priorToPuzzle horizontallyCentered"
+        onclick="hideAndShow('getPlayerName', 'playerReady'); sessionStorage.setItem('usersName', document.getElementById('playerNameInput').value)">
+        Next
+      </button>
+    </div>
+
+  </div>
+
+  <div hidden id="playerReady" class="landingContainer">
+    <h1>Are you ready to begin?</h1>
+    <h2 hidden id="teaserMessage">Can't turn back now. We didn't ask if you wanted to anyways...</h2>
+    <div style="display: flex">
+      <button id="notReady" class="priorToPuzzle horizontallyCentered"
+        onclick="teasePlayer()">
+        No
+      </button>
+      <button id="unsureIfReady" class="priorToPuzzle horizontallyCentered"
+        onclick="teasePlayer()">
+        Not Sure
+      </button>
+      <button id="surelyReady" class="priorToPuzzle horizontallyCentered"
+        onclick="document.getElementById('teaserMessage').innerHTML = 'Glad to hear...'; teasePlayer()">
+        Yes
+      </button>
+    </div>
+
+  </div>
+  <div hidden id="shortBackstory" class="landingContainer">
+    <div id="firstScene">
+      <img style="width: 25%" class="backstoryImage horizontallyCentered" src="images/studyingForExam.jpg">
+      <h3>
+        One day, you decided to stay after school in the computer lab to study for your ICD2O1 exam last minute! 
+        (Don't try this!). All was, "going well," until...
+      </h3>
+      <button class="priorToPuzzle horizontallyCentered" onclick="hideAndShow('firstScene', 'secondScene')">Continue</button>
+    </div>
+
+    <div hidden id="secondScene">
+      <img style="width: 50%" class="backstoryImage horizontallyCentered" src="images/noticingTime.jpg">
+      <h3>
+        <i>YOU NOTICED THE TIME!</i> It had been almost 4 hours since the school day ended! 
+        You lost track of time and forgot to leave before the janitor engaged the security padlock on the main door in the front entrance. 
+      </h3>
+      <button class="priorToPuzzle horizontallyCentered"
+        onclick="hideAndShow('secondScene', 'thirdScene')">
+        Continue
+      </button>
+    </div>
+
+    <div hidden id="thirdScene">
+      <h2>
+        And if you don't get home by <u><span style="font-family: monospace; font-size: xx-large">6:30pm</span></u>, your parents will suspect something's up...
+      </h2>
+      <button class="priorToPuzzle horizontallyCentered"
+        onclick="hideAndShow('thirdScene', 'fourthScene')">
+        Continue
+      </button>
+    </div>
+
+    <div hidden id="fourthScene">
+      <h2 style="color: yellow">YOUR TASK: Escape the school in time</h2>
+      <h2>Guess you better get going...</h2>
+      <button class="priorToPuzzle horizontallyCentered"
+        onclick="window.location.replace('rooms/computerStudies/computerStudiesRoom.html')">
+        Jump In
+      </button>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Source: Chris66ftw, 2006, Wikipedia, <a href="https://upload.wikimedia.org/wikipedia/commons/8/88/FXavierSS.jpg">https://upload.wikimedia.org/wikipedia/commons/8/88/FXavierSS.jpg</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

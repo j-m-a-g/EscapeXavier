@@ -1,0 +1,103 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+  <head>
+    <title>VR Room | Escape Xavier</title>
+
+    <!-- Source: https://aframe.io/docs/1.6.0/introduction -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    
+    <link rel="stylesheet" href="../roomStyle.css">
+    <link rel="stylesheet" href="virtualRealityRoom.css">
+  
+    <link rel="icon" href="../../favicon.ico">
+  </head>
+
+  <body onload="getCurrentTime('VRRoomTimer');
+                increaseTime('VRRoomTimer');
+                showPlayerName()">
+    
+    <!-- Ambiance to play in all puzzle rooms -->
+    <audio loop autoplay>
+      <source src="../../audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Top bar to appear in all rooms 
+    Modified for the VR Room to
+    only include access to the time -->
+    <header class="elementsOver">
+      <span class="escapeTimerHeading">
+        It's <span id="VRRoomTimer" class="escapeTimer"></span>pm <span id="userNameDisplay"></span>
+      </span>
+    </header>
+    
+    <a-scene>
+      <!-- Camera-->
+      <a-camera position="-35 10 30">
+        <a-cursor></a-cursor>
+      </a-camera> 
+      
+      <!-- Floor -->
+      <a-plane position="0 4 -1" rotation="-90 0 0" width="100" height="100" material="src: ../../images/libraryPuzzle/hardwoodFloor.jpg"></a-plane>
+      
+      <!-- Blocks for maze -->
+      <a-box position="-45 10 -3" width="105" height="20" depth="10" rotation="0 90 0" material="src: ../../images/librarypuzzle/bookshelfWall.jpg"> <!-- color="#160f40" -->
+      </a-box>
+      <a-box position="0 10 -52" width="100" height="20" depth="10" material="src: ../../images/librarypuzzle/bookshelfWall.jpg"> <!-- color="#160f40" -->
+      </a-box>
+      <a-box position="45 10 -10" width="75" height="20" depth="10" rotation="0 90 0" material="src: ../../images/librarypuzzle/bookshelfWall.jpg"> <!-- color="#160f40" -->
+      </a-box>
+      <a-box position="0 10 52" width="100" height="20" depth="10" material="src: ../../images/librarypuzzle/bookshelfWall.jpg"> <!-- color="#160f40" -->
+      </a-box>
+      <a-box position="-30 10 40" width="30" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-35 10 10" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="0 10 -8" width="20" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="0 10 -28" width="20" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-27 10 -2.7" width="27" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-27 10 -37" width="20" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-19 10 -28" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-19 10 -15" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="8 10 -18" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="20 10 -40" width="15" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-10 10 32" width="20" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="-2 10 22" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="5.6 10 28" width="10" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="15 10 32" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="22.6 10 42" width="20" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="10 10 5" width="10" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="19 10 9" width="17" height="20" depth="2" material="src: /images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="28 10 5" width="10" height="20" depth="2" rotation="0 90 0" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+      <a-box position="37 10 1" width="17" height="20" depth="2" material="src: ../../images/libraryPuzzle/bookshelfWall.jpg">
+      </a-box>
+
+      <a-sky color="#1a0d00"></a-sky> <!-- #1a1d3d -->
+
+      <!-- Three end doors -->
+      <a-box position="40 10 43" depth="0.7" height="10" width="5" material="src: ../../images/libraryPuzzle/door.jpg" id="door1" class="door" rotation="0 90 0"></a-box>
+      <a-box position="40 10 37" depth="0.7" height="10" width="5" material="src: ../../images/libraryPuzzle/door.jpg" id="door2" class="door" rotation="0 90 0"></a-box>
+      <a-box position="40 10 31" depth="0.7" height="10" width="5" material="src: ../../images/libraryPuzzle/door.jpg" id="door3" class="door" rotation="0 90 0"></a-box>
+    </a-scene>
+
+    <script src="../../script.js"></script>
+    <script src="virtualRealityRoom.js"></script>
+  </body>
+  
+</html>

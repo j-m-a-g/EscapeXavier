@@ -1,0 +1,13 @@
+/* 2025 - Navyaa & Joseph */
+
+body {
+  background-color: black;
+  opacity: 0;
+  animation: fadeFromBlack 3s ease-in forwards;
+}
+
+@keyframes fadeFromBlack {
+  to {
+      opacity: 1;
+  }
+}

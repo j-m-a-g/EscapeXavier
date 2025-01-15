@@ -1,0 +1,43 @@
+/* 2025 - Navyaa & Joseph */
+
+.desktopRepairImages {
+    width: 60%;
+    height: 60%;
+    filter: hue-rotate(150deg) brightness(80%);
+}
+
+.outlinedPlaceholder {
+    opacity: 0.25;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+#computerStudiesBody {
+    background-position-y: -300px;
+    background-image: Url("../../images/roomBackdrops/computerStudiesBackground.jpg");
+}
+
+#terminalArea {
+    padding: 10px;
+    color: lightgreen;
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    height: 300px;
+    min-height: 300px;
+    border-radius: 5px;
+    background-color: dimgray;
+}
+
+#sendToTerminalInput {
+    width: 97%;
+    border-radius: 5px;
+    border-style: Solid;
+    padding: 10px;
+    color: white;
+    background-color: dimgrey;
+}
+#sendToTerminalInput::placeholder {
+    color: white;
+}

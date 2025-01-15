@@ -1,0 +1,81 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Floor Plans | Escape Xavier</title>
+  <link rel="stylesheet" href="../roomStyle.css">
+  <link rel="stylesheet" href="floorNavigation.css">
+  
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body id="floorNavigationBody"
+  onclick="sessionStorage.setItem('shownTimeClock', document.getElementById('floorNavigationTimer').innerHTML)"
+  onload="getCurrentTime('floorNavigationTimer');
+          increaseTime('floorNavigationTimer');
+          showPlayerName()">
+
+  <audio loop autoplay>
+    <source src="../../audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+  </audio>
+  
+  <!-- Top bar to appear in all rooms 
+   Modified for floor navigation to
+   only include access to the time -->
+  <header>
+    <span class="escapeTimerHeading">
+      It's <span id="floorNavigationTimer" class="escapeTimer"></span>pm <span id="userNameDisplay"></span>
+    </span>
+  </header>
+
+  <!-- Individual room navigation buttons placed on top of their designated
+    room -->
+  <!-- First Floor -->
+  <button hidden id="firstFloorLobby" class="elementsOver classroomSelection"
+    onclick="window.location.replace('../lobby/lobby.html')"
+    style="width: 96px; height: 65px; margin-top: 77px; margin-left: 745px">
+  </button>
+
+  <!-- Second Floor -->
+  <button id="secondFloorComputerStudiesRoom" class="elementsOver classroomSelection"
+    onclick="window.location.replace('../computerStudies/computerStudiesRoom.html')"
+    style="width: 85px; height: 118px; margin-top: 330px; margin-left: 640px">
+  </button>
+  <button id="secondFloorLibrary" class="elementsOver classroomSelection"
+    onclick="window.location.replace('../library/library.html')"
+    style="width: 475px; height: 105px; margin-top: 20px; margin-left: 550px">
+  </button>
+
+  <!-- Third Floor -->
+  <button hidden id="thirdFloorArtRoom" class="elementsOver classroomSelection"
+    onclick="window.location.replace('../artRoom/artRoom.html')"
+    style="width: 115px; height: 100px; margin-top: 427px; margin-left: 782px">
+  </button>
+
+  <div id="floorSelection">
+    <h1 id="selectAFloorHeading">Select a floor to navigate to</h1>
+    <button class="generalButton" id="navigateToFloor3"
+      onclick="switchCurrentFloor(3)">
+      3️⃣ Third Floor
+    </button>
+    <br>
+    <br>
+    <button disabled class="generalButton" id="navigateToFloor2"
+      onclick="switchCurrentFloor(2)">
+      2️⃣ Second Floor
+    </button>
+    <br>
+    <br>
+    <button class="generalButton" id="navigateToFloor1"
+      onclick="switchCurrentFloor(1)">
+      1️⃣ First Floor
+    </button>
+  </div>
+
+  <script src="../../script.js"></script>
+  <script src="floorNavigation.js"></script>
+</body>
+
+</html>

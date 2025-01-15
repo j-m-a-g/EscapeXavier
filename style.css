@@ -1,0 +1,199 @@
+/* 2025 - Navyaa & Joseph */
+
+/* CSS Variables */
+:root {
+  --darkColor400: #9d9d9d;
+  --darkColor600: #555555;
+}
+
+html {
+  animation-name: bodyFadeIn;
+  animation-duration: 4s;
+}
+
+body {
+  font-family: "Arial";
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  border-style: none;
+  box-shadow: 5px 5px white;
+}
+button:disabled {
+  color: var(--darkColor400);
+  background-color: var(--darkColor600);
+}
+
+input[Type=Text] {
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+input[type=text]::placeholder {
+  text-align: center;
+}
+
+hr {
+  border-style: dashed;
+  width: 75%;
+}
+
+/*  */
+a {
+  color: yellow;
+}
+a:hover {
+  color: lightyellow;
+}
+
+.horizontallyCentered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sideBySide {
+  display: flex;
+}
+
+.landingTitle {
+  font-size: 3em;
+  margin-bottom: 0px;
+}
+
+.landingSubtitle {
+  margin-top: 10px;
+  font-size: 1.75em;
+  font-family: "Arial Narrow";
+}
+
+.landingDescription {
+  color: var(--darkColor400);
+  line-height: 30px;
+}
+
+.priorToPuzzle {
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+}
+
+.priorToPuzzle:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 5px 5px var(--darkColor400);
+}
+
+.priorToPuzzle:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--darkColor600);
+}
+
+.landingContainer {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 10px 20px 40px 20px;
+}
+
+.backstoryImage {
+  filter: hue-rotate(150deg) grayscale(90%);
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
+
+#landingPage {
+  color: white;
+  background-image:
+    /* Allows the background image to be tinted */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/STFrancisXaiverSecondarySchool.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#landingPageDiv {
+  margin-top: 10%;
+}
+
+#playerNameInput {
+  background-color: black;
+  color: White;
+  width: 25%;
+  border-style: solid;
+  border-color: white;
+}
+
+/* Styles specific to the
+  Successful Escape Page */
+.spacedCreditContainer {
+  margin-left: 200px;
+}
+
+.lightText {
+  font-weight: Normal;
+}
+
+.escapeResultPage {
+  color: white;
+  background-image:
+    /* Allows the background image to be tinted */
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("images/STFrancisXaiverSecondarySchool.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#playerHasEscaped {
+  color: yellow;
+}
+
+.successfulEscapeFooter {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  font-family: "Arial";
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+p {
+  font-family: "Arial Narrow";
+  color: white;
+}

@@ -1,0 +1,146 @@
+<!-- 2025 - Navyaa & Joseph -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>You Have Successfully Escaped!</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body class="escapeResultPage" onload="showThatPlayerEscaped()">
+  <audio loop autoplay>
+    <source src="audio/emptyRoomAmbiance.ogg" type="audio/ogg">
+  </audio>
+
+  <footer class="successfulEscapeFooter">
+    <h1 id="playerHasEscaped"></h1>
+
+    <!-- Credits -->
+    <marquee scrolldelay="60">
+      <div class="sideBySide">
+        <div>
+          <h2>Escape Xavier | An Escape You Could've Never Imagined</h2>
+          <hr>
+          <h2 class="lightText">Credits</h2>
+        </div>
+
+        <div class="spacedCreditContainer">
+          <h3>Designed & Developed By</h3>
+          <h3 class="lightText">Navyaa</h3>
+          <h3 class="lightText">Joseph</h3>
+        </div>
+
+        <div class="spacedCreditContainer">
+          <h3>Playtested By</h3>
+          <h3 class="lightText">Navyaa</h3>
+          <h3 class="lightText">Joseph</h3>
+        </div>
+
+        <div class="spacedCreditContainer">
+          <h3>Sound Effects</h3>
+          <h3 class="lightText">
+            <a href="audio/clockTickingWithEcho.ogg">'clockTickingWithEcho.ogg'</a> 
+            from <a href="https://www.youtube.com/watch?v=E_srkRtviUI">Gaba's Stuff</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="audio/emptyRoomAmbiance.ogg">'emptyRoomAmbiance.ogg'</a> 
+            from <a href="https://www.youtube.com/watch?v=8m91-gu-x8U">soundfx</a>
+          </h3>
+        </div>
+        <div class="spacedCreditContainer">
+          <h3 class="lightText">
+            <a href="audio/keypadBeepSoundEffect.mp3">'keypadBeepSoundEffect.mp3'</a> 
+            by <a href="https://pixabay.com/users/freesoundsxx-47251115/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=269718">FreeSoundsxx</a> 
+            from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=269718">Pixabay</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="audio/dropdownClickSoundEffect.mp3">'dropdownClickSoundEffect.mp3'</a>
+            by <a href="https://pixabay.com/users/soundsforstory-46312188/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=272973">soundsforstory</a> 
+            from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=272973">Pixabay</a>
+          </h3>
+        </div>
+
+        <div class="spacedCreditContainer">
+          <h3>Code</h3>
+          <h3 class="lightText">
+            <a href="https://aframe.io/docs/1.6.0/introduction">Introduction - A-Frame</a> 
+            used in <a href="rooms/library/virtualRealityRoom.html">'virtualRealityRoom.html'</a>
+          </h3>
+        </div>
+
+        <div class="spacedCreditContainer">
+          <h3>Images</h3>
+          <h3 class="lightText">
+            <a href="images\computerStudiesPuzzle\whatDesktopComponent.jpg">'whatDesktopComponent.jpg'</a> 
+            by <a href="https://pixabay.com/users/cdd20-1193381/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5267138">愚木混株 Cdd20</a> 
+            from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5267138">Pixabay</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="images\roomBackdrops\floorNavigationElevatorBackground.png">'floorNavigationElevatorBackground.png'</a> 
+            by <a href="https://pixabay.com/users/królestwo_nauki-17664295/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6232385">Królestwo_Nauki</a> 
+            from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6232385">Pixabay</a>
+          </h3>
+        </div>
+        <div class="spacedCreditContainer">
+          <h3 class="lightText">
+            <a href="images\artRoomPuzzle\artCanvas.png">'artCanvas.png'</a> 
+            by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=154737">OpenClipart-Vectors</a> 
+            from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=154737">Pixabay</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="images\artRoomPuzzle\Go_behind_the_scenes.jpg">'Go_behind_the_scenes.jpg'</a> 
+            by Unknown photographer 
+            from <a href="https://commons.wikimedia.org/w/index.php?curid=153100442">Wikimedia Commons</a>
+          </h3>
+          <h3 class="lightText">
+              <a href="images\computerStudiesPuzzle\desktopSecondPerspective.jpg">'desktopSecondPerspective.jpg'</a>, 
+              <a href="images\computerStudiesPuzzle\desktopCPU.jpg">'desktopCPU.jpg'</a>, 
+              and <a href="images\computerStudiesPuzzle\desktopRAM.jpg">desktopRAM.jpg</a> 
+              from <a href="https://www.techspot.com/article/2024-anatomy-ram">TechSpot</a>
+          </h3>
+        </div>
+        <div class="spacedCreditContainer">
+          <h3 class="lightText">
+            <a href="images\roomBackdrops\firstFloorPlan.jpg">'firstFloorPlan.jpg'</a>, 
+            <a href="images\roomBackdrops\secondFloorPlan.jpg">'secondFloorPlan.jpg'</a>, 
+            and <a href="images\roomBackdrops\thirdFloorPlan.jpg">'thirdFloorPlan.jpg'</a> 
+            from <a href="https://www3.dpcdsb.org/STFXS/PublishingImages/Pages/Forms/AllItems/St.%20Francis%20Xavier%20Secondary%20School%20Floor%20Plan.pdf">DPCDSB</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="images/noticingTime.jpg">'noticingTime.jpg'</a> 
+            and <a href="images/studyingForExam.jpg">'studyingForExam.jpg'</a> 
+            by Duke_Ellington 95 
+            from <a href="https://www.flickr.com/photos/departmentofed/9609880680/in/photolist-fDc9HW-aDsKwo-3eqGV3-hSgh2M-dezfy3-5m6tDF-9meZ8t-9nbd3Q-ikr4Xn-8Q4wk2-6kt2qG-qLSojF-72rnMz-8BgMag-9riyjU-ieiWeh-8AWZTX-7tZBNN-d2PV6Q-cSEQCy-8B16zA-hynvLp-qHavkk-aev3yV-97eTYW-anmq2X-i7ppCN-9V51oC-dm2pYR-e1ekM9-9iXp9z-73wPqq-ggXwya-fU94oA-9n6i4i-aDRgGr-daDwFL-8BjUmm-7Mxksn-7osZfd-i7pkmc-i7pmuU-73wQTy-i39bJ4-5TidoQ-oafDJN-c45y97-perrgG-7AAXdV-8xuLxR">Flickr</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="images/libraryPuzzle/bookshelfWall.jpg">'bookshelfWall.jpg'</a> 
+            by Benzoix 
+            from <a href="https://thumbnails.yayimages.com/1600/11/44d/1144d9e6.jpg">YayImages</a>
+          </h3>
+        </div>
+        <div class="spacedCreditContainer">
+          <h3 class="lightText">
+            <a href="images/libraryPuzzle/door.jpg">'door.jpg'</a> 
+            by Unknown photographer 
+            from <a href="https://purepng.com/public/uploads/large/purepng.com-doordoordoor-middel-vandoor-elkaarclosed-dooropen-door-1701527933061qsiqo.png">PurePNG</a>
+          </h3>
+          <h3 class="lightText">
+            <a href="images/libraryPuzzle/hardwoodFloor.jpg">'hardwoodFloor.jpg'</a> 
+            by Komthong Wongsangiam 
+            from <a href="https://media.istockphoto.com/id/1314509548/photo/black-wood-texture-background-wood.jpg?s=1024x1024&w=is&k=20&c=B90adzinsgU1TB8xlrgv_l61qoUxONgeIW6qrcHR9e4=">iStock</a>
+          </h3>
+        </div>
+
+      </div>
+
+    </marquee>
+
+  </footer>
+
+  <script src="successfulEscape.js"></script>
+</body>
+
+</html>

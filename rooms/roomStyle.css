@@ -1,0 +1,186 @@
+/* 2025 - Navyaa & Joseph */
+
+/* General styles shared amongst all rooms */
+
+:root {
+  --darkColor400: #9d9d9d;
+  --darkColor600: #555555;
+}
+
+body {
+  margin: 0px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  padding: 5px 15px 5px 15px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+p {
+  font-size: 12px;
+  font-family: "Arial Narrow";
+  color: white;
+}
+
+a {
+  color: yellow;
+}
+a:hover {
+  color: lightyellow;
+}
+
+label {
+  font-family: Arial;
+  color: white;
+}
+
+/* Inherits a few style properties from generalButton class */
+select {
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  border-radius: 10px;
+  border-color: white;
+}
+select:hover {
+  background-color: white;
+  color: black;
+}
+select:active {
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* Inherits similar style from 'style.css' */
+footer {
+  padding-left: 5px;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.centeredElements {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sideBySide {
+  display: flex;
+}
+
+.dimmedImage {
+  filter: brightness(50%);
+}
+
+.escapeTimerHeading {
+  color: white;
+  font-family: monospace;
+}
+
+.escapeTimer {
+  color: white;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+
+/* Will be shared between all puzzle rooms */
+.quickTopNavigation {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button.quickTopNavigation {
+  font-family: 'Arial Narrow';
+  border-radius: 10px;
+  background: none;
+  padding: 2px 10px 2px 10px;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
+button.quickTopNavigation:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px dimgrey;
+}
+button.quickTopNavigation:active {
+  border-color: dimgrey;
+  box-shadow: 2px 2px black;
+}
+
+/* Style for most buttons on the site */
+.generalButton {
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: white;
+}
+.generalButton:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 5px 5px var(--darkColor400);
+}
+.generalButton:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--darkColor600);
+}
+.generalButton:disabled {
+  color: var(--darkColor400);
+  background-color: var(--darkColor600);
+}
+
+.imageButtons {
+  background: none;
+  border: none;
+}
+
+.interactableImage:hover {
+  animation-name: fadeBoxShadow;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.puzzleContainer {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100%;
+  position: center;
+  background-color: black;
+}
+
+/* Allows images for a puzzle to be displayed on top
+  of a, "base" */
+.elementsOver {
+  position: fixed;
+  z-index: 1;
+}
+select.elementsOver {
+  width: 130px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeBoxShadow {
+  to {
+    box-shadow: 3px 3px white;
+  }
+}
